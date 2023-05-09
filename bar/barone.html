@@ -1,0 +1,101 @@
+<!-- 首先先把 HTML 的代码写完，这个不难的，大家看的时候一定要按照逻辑来看，不要死磕一句 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Navigation Bar</title>
+  <!-- 我们将 HTML 和 CSS 代码分开写，分离可以让代码可读性更好-->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <style>
+    /* 接下来开始美化，我们一步步来，不要急
+用 CSS 美化网页的时候一定要遵循 从上到下、从外到内 的原则
+从上到下：先出现的标签，先设置样式
+从内到外：出现标签嵌套的时候，先设置外部标签的样式，再设置内部标签的样式。这是因为外部标签可能会影响内部标签 */
+
+    /* 全局样式设置，内边距和外边距都为 0，因为很多标签自带边距，这是我们不希望的 */
+    *{
+      margin:0;
+      padding:0;
+    }
+
+    /* 去掉所有列表前面的黑色圆点 */
+    li {
+      list-style: none;
+    }
+
+    /* 去掉链接的下划线 */
+    a {
+      text-decoration: none;
+    }
+
+    /* 接下来开始设置局部样式，看着代码有点多，其实只要明白逻辑，书写并不是很困难。
+    有心的读者可以发现，博主一直在强调逻辑，因为代码是多变的，而逻辑是固定的，我们以后在书写网页代码的时候，一定是有目的的书写，而不是用 Google 开发者工具一个个试  */
+
+    /* 设置 header（导航栏）的宽高以及背景色，一般我们会指定一个高度，方便内部元素继承这个属性 */
+    #header {
+      background-color: #008080;
+      width: 100%;
+      height: 50px;
+    }
+
+    /* 设置列表样式，注意这里的 menu 并不是指代 ul 标签，而是 ul 下面的 div 块标签 */
+    #header .menu {
+      display: flex;				/* display: flex：弹性盒子，很适合多个元素按一行或者一列排开 */
+      height: 100%;				/* 设置和导航栏 header 相同的高度 */
+      line-height: 50px;			/* 设置行高，注意不要使用 inherit（继承），因为 menu 的父标签不是 header，而是 ul，我们并没有设置 ul 的行高，无法继承 */
+      max-width: 600px;			/* 最大宽度 */
+      padding: 0 20px;			/* 左右内边距均为 20 像素 */
+    }
+
+    /* 设置 ul 中每一个 li 的样式*/
+    #header .menu li{
+      height: 100%;				/* 设置高度，让每一个标签的高度也等于 header 高度 */
+    }
+
+    /* 设置 li 的鼠标移过动画 */
+    #header li:hover {
+      background: #4c9e9e;
+      transition: 0.5s;			/* 持续 0.5 秒 */
+    }
+
+    /* 设置 li 中 a 标签样式，可以发现我们严格按照从外到内的原则编写样式 */
+    #header .menu li a {
+      font: bolder normal 16px Source Sans Pro;
+      color: #fff;				/* 不解释，看不懂的补 CSS 知识去 */
+      padding: 14px 15px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- 养成习惯，导航栏用 div 块包起来，名称为 header  -->
+<div id="header">
+
+  <!-- 这里每一个功能都设置了 class 名称 -->
+  <ul>
+    <div class="menu">
+      <li class="front-page"><a href="#">首页</a></li>
+
+      <li class="blog"><a href="#">博客</a>
+        <!-- 这是一个子列表 -->
+        <ul class="blog-subfunction">
+          <li><a href="#">写博客</a></li>
+          <li><a href="#">删博客</a></li>
+          <li><a href="#">看博客</a></li>
+        </ul>
+      </li>
+
+      <li class="course"><a href="#">课程</a></li>
+      <li class="developer-mall"><a href="#">开发者商城</a></li>
+      <li class="answer-request"><a href="#">问答</a></li>
+      <li class="community"><a href="#">社区</a></li>
+    </div>
+  </ul>
+
+</div>
+
+</body>
+</html>
