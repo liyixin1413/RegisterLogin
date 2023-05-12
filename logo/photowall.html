@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      perspective: 1500px;
+    }
+    #pic{
+      margin-top: 500px;;
+      display: flex;
+      width: 350px;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation: action 20s linear infinite;
+    }
+    @keyframes action {
+      from{
+        transform: rotate(0deg);
+      }to{
+      transform: rotateY(360deg);
+
+             }
+
+
+    }
+    #pic :hover{
+      cursor: pointer;
+      animation-play-state: paused;
+    }
+    #pic img{
+      position:absolute;
+      width: 350px;
+      height: 200px;
+    }
+
+    #pic img{
+      :
+    }
+
+    #pic img:nth-child(1){
+      transform: translateZ(500px);
+    }
+    #pic img:nth-child(2){
+      transform: rotate(60deg) translateZ(500px);
+    }
+    #pic img:nth-child(3){
+      transform: rotate(120deg) translateZ(500px);
+    }
+    #pic img:nth-child(4){
+      transform: rotate(180deg) translateZ(500px);
+    }
+    #pic img:nth-child(5){
+      transform: rotate(240deg) translateZ(500px);
+    }  #pic img:nth-child(6){
+         transform: rotate(300deg) translateZ(500px);
+       }
+
+  </style>
+</head>
+<body>
+<div id="pic">
+  <img src="./img/276996AB17DB61F428ED001D3DE82699.jpg">
+  <img src="./img/cat.png">
+  <img src="./img/chick.jpg">
+  <img src="./img/facebook.jpg">
+  <img src="./img/girl.jpg">
+  <img src="./img/headp.jpg">
+
+</div>
+
+</body>
+</html>
